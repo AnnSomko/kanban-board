@@ -1,0 +1,8 @@
+<div class="min-h-screen bg-slate-950 text-slate-100 p-8">
+    <h2 class="text-3xl font-extrabold mb-8 text-center">My Tasks</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <app-column-component [title]="'To Do'" [status]="'todo'"></app-column-component>
+        <app-column-component [title]="'In Progress'" [status]="'in-progress'"></app-column-component>
+        <app-column-component [title]="'Done'" [status]="'done'"></app-column-component>
+    </div>
+</div>

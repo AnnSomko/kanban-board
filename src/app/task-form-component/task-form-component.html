@@ -1,0 +1,100 @@
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+
+  <div
+    class="relative z-10 w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl flex flex-col gap-4"
+  >
+    <h3 class="text-xl font-bold text-slate-100 text-center">Create New Task</h3>
+
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1.5">
+        <label for="title" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
+          >Task Title</label
+        >
+        <input
+          id="title"
+          formControlName="title"
+          type="text"
+          placeholder="Enter task title..."
+          class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+        />
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label
+          for="description"
+          class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
+          >Description</label
+        >
+        <textarea
+          id="description"
+          formControlName="description"
+          rows="3"
+          placeholder="Enter task description..."
+          class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+        ></textarea>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="author" class="text-xs font-semibold text-slate-400 uppercase tracking-wider"
+          >Author</label
+        >
+        <input
+          id="author"
+          formControlName="author"
+          type="text"
+          placeholder="Enter author's name..."
+          class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+        />
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Status</span>
+        <div class="grid grid-cols-3 gap-2 bg-slate-950 p-1 rounded-xl border border-slate-800">
+          <label class="cursor-pointer">
+            <input type="radio" value="todo" formControlName="status" class="peer hidden" />
+            <div
+              class="text-center py-2 text-xs font-bold rounded-lg text-slate-400 bg-transparent peer-checked:bg-blue-600 peer-checked:text-white hover:text-slate-200 transition-all"
+            >
+              To Do
+            </div>
+          </label>
+
+          <label class="cursor-pointer">
+            <input type="radio" value="in-progress" formControlName="status" class="peer hidden" />
+            <div
+              class="text-center py-2 text-xs font-bold rounded-lg text-slate-400 bg-transparent peer-checked:bg-amber-600 peer-checked:text-white hover:text-slate-200 transition-all"
+            >
+              In Progress
+            </div>
+          </label>
+
+          <label class="cursor-pointer">
+            <input type="radio" value="done" formControlName="status" class="peer hidden" />
+            <div
+              class="text-center py-2 text-xs font-bold rounded-lg text-slate-400 bg-transparent peer-checked:bg-emerald-600 peer-checked:text-white hover:text-slate-200 transition-all"
+            >
+              Done
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-2 mt-2 border-t border-slate-800">
+        <button
+          type="button"
+          (click)="onClose()"
+          class="px-4 py-2 text-sm font-semibold rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-colors"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-lg cursor-pointer transition-colors"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
