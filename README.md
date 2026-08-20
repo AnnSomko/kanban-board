@@ -12,6 +12,6 @@ Key features:
 
 Tech stack:
 - Angular 21
-- Tpescript
+- TypeScript
 - HTML5
 - Tailwind CSS
