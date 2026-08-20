@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Task } from '../task.type';
 
 @Component({
@@ -8,5 +8,10 @@ import { Task } from '../task.type';
   styleUrl: './card-component.css',
 })
 export class CardComponent {
-  data = input<Task>();
+  data = input.required<Task>();
+  delete = output<string>();
+
+  onDeleteTask() {
+    this.delete.emit(this.data()?.id)
+  }
 }

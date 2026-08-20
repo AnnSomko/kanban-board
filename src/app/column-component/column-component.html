@@ -8,7 +8,7 @@
         <app-task-form-component (close)="onCloseModal()"></app-task-form-component>}
     
     @for (item of filteredTasks(); track $index) {
-        <app-card-component [data]="item" class="block mb-4"></app-card-component>
+        <app-card-component [data]="item" (delete)="onDeleteTask($event)" class="block mb-4"></app-card-component>
     } @empty {
         <p class="text-xs text-slate-500 text-center py-8">No tasks yet.</p>
     }

@@ -29,4 +29,8 @@ export class ColumnComponent {
   onCloseModal() {
     this.isModalOpen.set(false);
   }
+
+  onDeleteTask(taskId: string) {
+    this.taskService.deleteTask(taskId);
+  }
 }

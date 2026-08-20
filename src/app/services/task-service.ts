@@ -14,4 +14,8 @@ export class TaskService {
         }
         this.tasks.update(currentTasks => [...currentTasks, newTask]);
     }
+
+    deleteTask(id: string) {
+        this.tasks.update(currentTasks => currentTasks.filter(task => task.id != id))
+    }
 }
