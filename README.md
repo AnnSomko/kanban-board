@@ -8,7 +8,7 @@ Key features:
 - Standalone components
 - Signals
 - Reactive form
-- Shered service
+- Shared service
 
 Tech stack:
 - Angular 21
